@@ -1,9 +1,25 @@
-# This file should ensure the existence of records required to run the application in every environment (production,
-# development, test). The code here should be idempotent so that it can be executed at any point in every environment.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Example:
-#
-#   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
-#     MovieGenre.find_or_create_by!(name: genre_name)
-#   end
+# Order.create!(item_name: "Laptop", cancelled: false)
+# Order.create!(item_name: "Headphones", cancelled: true)
+
+# Subscription.create!(plan_name: "Monthly", cancelled: false)
+# Subscription.create!(plan_name: "Yearly", cancelled: true)
+
+# puts "Seeded #{Order.count} orders and #{Subscription.count} subscriptions."
+
+puts "Creating Orders..."
+
+Order.create!(item_name: "Sample Order 1", cancelled: false)
+Order.create!(item_name: "Sample Order 2", cancelled: true)
+Order.create!(item_name: "Sample Order 3", cancelled: false)
+Order.create!(item_name: "Sample Order 4", cancelled: true)
+
+puts "Seeded #{Order.count} orders."
+
+puts "Creating Subscriptions..."
+
+Subscription.create!(plan_name: "Sample Subscription 1", cancelled: false)
+Subscription.create!(plan_name: "Sample Subscription 2", cancelled: true)
+Subscription.create!(plan_name: "Sample Subscription 3", cancelled: false)
+Subscription.create!(plan_name: "Sample Subscription 4", cancelled: true)
+
+puts "Seeded #{Subscription.count} subscriptions."
